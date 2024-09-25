@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Iframe Shadow</title>
+    <style>
+        .container {
+            position: relative;
+            width: 560px;
+            height: 315px;
+            margin: 20px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.8); /* Default shadow */
+            pointer-events: none; /* Allows clicks to pass through */
+            transition: box-shadow 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- <iframe src="https://www.example.com" id="mediaIframe"></iframe> -->
+    <iframe src="https://www.youtube.com/embed/cJxT26bsrQ0?autoplay=1" id="mediaIframe"
+    title="Embed videos and playlists" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+    <div class="overlay" id="overlay"></div>
+</div>
+
+<script>
+    function applyDynamicShadow() {
+        // Set a dynamic color for the shadow
+        // Since we cannot extract colors from iframe, use a static color or some logic to simulate changes
+        // Example with random color for demonstration purposes:
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+
+        document.getElementById('overlay').style.boxShadow = `0 0 100px rgba(${r}, ${g}, ${b}, 0.8)`;
+    }
+
+    // Update shadow dynamically (you can add intervals or other triggers as needed)
+    setInterval(applyDynamicShadow, 1000); // Update every second for demonstration
+</script>
+
+</body>
+</html>
