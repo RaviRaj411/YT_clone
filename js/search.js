@@ -19,9 +19,7 @@ sidebarIco.addEventListener('click', () => {
 
 //! api integration
 
-
-let apikey = 'AIzaSyDuVY85OBBizeRvSU6eO5_wp0-aCMZKqxI'
-apikey = 'AIzaSyBhP5KpojLg033kMcSIuFBgwpZCyyO0cuI'
+let apikey = 'Put your own key'
 
 let search_http = 'https://www.googleapis.com/youtube/v3/search?'
 let video_http = 'https://www.googleapis.com/youtube/v3/videos?'
